@@ -28,7 +28,7 @@ prefix = "/cybersixgill"
 # The amount of indicators to retrieve from Cybersixgill for each time the script runs.
 bulk_size = 20
 
-
+# Instantiate the Cybersixgill client
 def create_sixgill_client():
     sixgill_client = SixgillFeedClient(client_id=client_id, client_secret=client_secret, channel_id=channel_id,
                                        feed_stream=FeedStream.DARKFEED, bulk_size=bulk_size, verify=True)
@@ -99,6 +99,7 @@ def process_events(records):
         agent_request(event)
 
 
+# Sends the event to the HTTP listener used by Elastic Agent
 def agent_request(event):
     headers = {'Content-Type': 'application/json'}
     r = requests.post(url, json=event, auth=(
