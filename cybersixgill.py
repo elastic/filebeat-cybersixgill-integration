@@ -37,7 +37,7 @@ def create_sixgill_client():
 
 def process_events(records):
     if not records:
-        exit
+        exit()
     regex_parser = re.compile(
         r"([\w-]+?):(\w.+?) (?:[!><]?=|IN|MATCHES|LIKE) '(.*?)' *[OR|AND|FOLLOWEDBY]?")
 
