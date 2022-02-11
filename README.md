@@ -56,9 +56,9 @@ $sudo nano /etc/systemd/system/cybersxigill.timer
 Example timer file:
 ```
 [Unit]
-Description=Run Cybersixgill Python Script every 10 minutes
+Description=Run Cybersixgill Python Script every 15 minutes
 [Timer]
-OnBootSec=10min
+OnBootSec=15min
 OnUnitActiveSec=15min
 [Install]
 WantedBy=timers.target
