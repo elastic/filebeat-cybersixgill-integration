@@ -11,8 +11,6 @@ from sixgill.sixgill_utils import is_indicator
 client_id = ""
 # The Client Secret used to authenticate with Cybersixgill.
 client_secret = ""
-# The Channel ID received from Cybersixgill.
-channel_id = ""
 
 ##Elastic Agent Configuration##
 # The URL (hostname or IP address) in which the Elastic Agent configured to listen on. Including if its http/https.
@@ -26,11 +24,13 @@ password = ""
 # The URL prefix choosen when configuring the integration, defaults to /cybersixgill.
 prefix = "/cybersixgill"
 # The amount of indicators to retrieve from Cybersixgill for each time the script runs.
-bulk_size = 20
+bulk_size = 100
 
 # Instantiate the Cybersixgill client
+
+
 def create_sixgill_client():
-    sixgill_client = SixgillFeedClient(client_id=client_id, client_secret=client_secret, channel_id=channel_id,
+    sixgill_client = SixgillFeedClient(client_id=client_id, client_secret=client_secret, channel_id=510fff0a8aa9c79e45c744e7004add4b,
                                        feed_stream=FeedStream.DARKFEED, bulk_size=bulk_size, verify=True)
     return sixgill_client
 
