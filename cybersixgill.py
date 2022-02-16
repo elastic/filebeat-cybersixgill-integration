@@ -25,12 +25,13 @@ password = ""
 prefix = "/cybersixgill"
 # The amount of indicators to retrieve from Cybersixgill for each time the script runs.
 bulk_size = 100
-
+# The current ChannelID
+channel_id = "510fff0a8aa9c79e45c744e7004add4b"
 # Instantiate the Cybersixgill client
 
 
 def create_sixgill_client():
-    sixgill_client = SixgillFeedClient(client_id=client_id, client_secret=client_secret, channel_id=510fff0a8aa9c79e45c744e7004add4b,
+    sixgill_client = SixgillFeedClient(client_id=client_id, client_secret=client_secret, channel_id=channel_id,
                                        feed_stream=FeedStream.DARKFEED, bulk_size=bulk_size, verify=True)
     return sixgill_client
 
